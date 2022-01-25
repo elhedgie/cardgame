@@ -76,9 +76,8 @@
     }
     function deleteAll() {
         let oldGameBlock = document.querySelector('.game-block')
-        let oldGameBlockTwo = document.querySelector('.game-block-2-4')
-        let result = (oldGameBlock) ? oldGameBlock.parentNode.removeChild(oldGameBlock) : oldGameBlock
-        let resultTwo = (oldGameBlockTwo) ? oldGameBlockTwo.parentNode.removeChild(oldGameBlockTwo) : oldGameBlockTwo
+        let result = oldGameBlock ? oldGameBlock.parentNode.removeChild(oldGameBlock): oldGameBlock
+        
         clearInterval(timer)
     }
     // создание игры
