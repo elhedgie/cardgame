@@ -1,0 +1,6 @@
+@font-face {
+    font-weight: 400; /* вес шрифта */
+    font-family: "Balsamiq";
+    src: url('../fonts/BalsamiqSans-Bold.woff2') format("woff2"),
+    url('../fonts/BalsamiqSans-Bold.woff') format("woff");
+}

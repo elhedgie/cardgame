@@ -1,0 +1,258 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+} 
+body {
+    margin: 0;
+    font-family: Balsamiq;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(65 54 110);
+    background: 
+        rgb(69 69 129);
+}
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+} 
+
+.list-reset {
+    margin: 0; 
+    padding: 0;
+    list-style-type: none;
+} 
+.input-reset, .button-reset {
+    padding: 0;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 1%;
+    max-width: 1500px;
+    /* min-height: 680px; */
+    background-color: rgb(179 192 255 / 80%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0 25px black;
+}
+
+
+/* btn */
+.pair-game__btn_start, .reset-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    min-height: 45px;
+    transition: transform .4s ease;
+    background-color: #cae2ff;
+    border-radius: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: box-shadow .4s ease;
+    cursor: pointer;
+}
+
+.pair-game__btn_start:hover, .reset-btn:hover {
+    box-shadow: 0 0 10px #5272cb;
+}
+.pair-game__btn_start:active {
+    transform: scale(.95);
+}
+/* game block styles */
+.pair-game {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.pair-game__form {
+    display: flex;
+    column-gap: 5%;
+    align-items: start;
+    justify-content: center;
+}
+.pair-game__selection {
+    width: 100%;
+}
+.pair-game__form {
+    margin-bottom: 20px;
+}
+.game-block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 40%;
+    aspect-ratio: 1/1;
+}
+/* card styles */
+.game-block__card {
+    position: relative;
+    margin-bottom: 20px;
+    transition: all .5s ease;
+    perspective: 1000px;
+}
+
+.disabled {
+    pointer-events: none;
+}
+.front {
+    background-color: #cfbf6d;
+    background-image: url('../img/PikPng.com_argentina-flag-png_661148.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    
+}
+.front, .back { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    border-radius: 5px;
+    box-shadow: -2px 0 9px rgb(104, 100, 100);
+    transition: all .5s ease;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotatey(180deg);
+    background-color: rgb(233, 233, 245);
+}
+/* timer */
+.timer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    min-height: 45px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.timer-block {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    column-gap: 5%;
+}
+.timer__text {
+    margin-right: 20px;
+}
+
+/* select */
+.choices {
+    margin: 0;
+    width: 30%;
+    min-height: 43px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .4s ease;
+}
+.choices.is-focused .choices__inner{
+    z-index: 2;
+
+}
+.choices.is-focused .choices__inner {
+    border-radius: 10px;
+
+}
+.choices__item.is-selected {
+    display: none;
+}
+.choices.is-focused .choices__list--dropdown {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+.choices__list--dropdown {
+    
+    margin-top: -7px;
+}
+/* media */
+@media (max-width: 1601px) {
+    .container {
+        max-width: 1300px;
+    }
+    .game-block {
+        width: 500px;
+        aspect-ratio: 1/1;
+        -webkit-aspect-ratio: 1/1;
+
+    }
+}
+@media (max-width: 1366px) {
+    .container {
+        max-width: 90%;
+    }
+   
+}
+@media (max-width: 1024px) {
+    
+    .game-block {
+        width: 90%;
+        aspect-ratio: 1/1;
+    }
+    .choices, .pair-game__btn_start, .reset-btn, .timer {
+        width: 30%;
+    }
+    
+    .pair-game {
+        max-width: 100%;
+    }
+    .timer-block {
+        width: 100%;
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        /* min-height: 400px; */
+        padding: 4%;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .pair-game__btn_start, .reset-btn {
+        width: 60%;
+    }
+    
+    .timer {
+        width: 70%;
+    }
+}
+

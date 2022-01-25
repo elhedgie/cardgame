@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css"/>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <script defer src="src/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createGame()
+        })
+    </script>
+    <title>Найди пару</title>
+</head>
+<body>
+    <div class="container">
+        <div class="pair-game">
+            <h1 class="pair-game__heading_one">НАЙДИ ПАРУ</h1>
+            <div class="pair-game__selection">
+                <div class="pair-game__form">
+                    <select class="pair-game__selection" id="select">
+                        <option value="16" class="pair-game__option">16</option>
+                        <option value="20" class="pair-game__option">20</option>
+                        <option value="24" class="pair-game__option">24</option>
+                        <option value="28" class="pair-game__option">28</option>
+                        <option value="32" class="pair-game__option">32</option>
+                    </select>
+                    <button class="button-reset pair-game__btn_start">Начать игру</button>
+                </div>
+                <div class="timer-block">
+                    <div class="timer">
+                    <span class="timer__text">Время:</span>
+                    <span class="timer__time"></span>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        const element = document.querySelector('#select');
+        const choices = new Choices(element, {
+            searchEnabled: false,
+            itemSelectText: '',
+        });
+    </script>
+</body>
+</html>
+
